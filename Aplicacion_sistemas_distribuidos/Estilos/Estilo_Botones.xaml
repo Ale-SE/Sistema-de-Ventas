@@ -1,0 +1,530 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Boton menu lateral izquierdo rectangular-->
+    <Style x:Key="Estilo_Boton_Lateral" TargetType="RadioButton">
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="Margin" Value="-5,0,0,5"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderThickness="4,0,0,0"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                        <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <!--Button Style on hover-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="Background" Value="LightBlue"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+            </Trigger>
+            <!--Activated button style-->
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="Background" Value="LightBlue"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="BorderBrush" Value="#0066cc"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  ESTILO DE TITULO HOME -->
+    <Style x:Key="Estilo_Labels_Menu_Principal" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Teal"/>
+        <Setter Property="FontStyle" Value="Oblique"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+    </Style>
+
+    <!--  ESTILO DE BOTONES PARA EL MENU PRINCIPAL -->
+    <Style x:Key="Estilo_RB_Menu_Principal" TargetType="RadioButton">
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border x:Name="border" BorderThickness="0"
+                            Background="{TemplateBinding Background}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
+        <!-- ANIMACION DE TAMAÑO DE BOTON -->
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                         To="110"
+                                         Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                         To="110"
+                                         Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                         To="75"
+                                         Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                         To="75"
+                                         Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!-- ESTILO DE TITULO PERFIL -->
+    <Style x:Key="Estilo_Labels_Perfil_Principal" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Teal"/>
+        <Setter Property="FontStyle" Value="Oblique"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+    </Style>
+    <!-- ESTILO DE BOTON PERFIL -->
+    <Style x:Key="Estilo_RB_Perfil_Principal" TargetType="RadioButton">
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border x:Name="border" BorderThickness="0"
+            Background="{TemplateBinding Background}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- ANIMACION DE TAMAÑO DE BOTON -->
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!-- ESTILO DE TITULO FACULTADES -->
+    <Style x:Key="Estilo_Labels_Facultades_Principal" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Teal"/>
+        <Setter Property="FontStyle" Value="Oblique"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+    </Style>
+    <!-- ESTILO DE BOTON FACULTADES -->
+    <Style x:Key="Estilo_RB_Facultades_Principal" TargetType="RadioButton">
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border x:Name="border" BorderThickness="0"
+                    Background="{TemplateBinding Background}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- ANIMACION DE TAMAÑO DE BOTON -->
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!-- ESTILO DE TITULO VENTA -->
+    <Style x:Key="Estilo_Labels_Venta_Principal" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Teal"/>
+        <Setter Property="FontStyle" Value="Oblique"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+    </Style>
+    <!-- ESTILO DE BOTON VENTA -->
+    <Style x:Key="Estilo_RB_Venta_Principal" TargetType="RadioButton">
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border x:Name="border" BorderThickness="0"
+                        Background="{TemplateBinding Background}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- ANIMACION DE TAMAÑO DE BOTON -->
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!-- ESTILO DE TITULO INVENTARIO -->
+    <Style x:Key="Estilo_Labels_Inventario_Principal" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Teal"/>
+        <Setter Property="FontStyle" Value="Oblique"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+    </Style>
+    <!-- ESTILO DE BOTON INVENTARIO -->
+    <Style x:Key="Estilo_RB_Inventario_Principal" TargetType="RadioButton">
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border x:Name="border" BorderThickness="0"
+                Background="{TemplateBinding Background}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- ANIMACION DE TAMAÑO DE BOTON -->
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!-- ESTILO DE TITULO PAGO -->
+    <Style x:Key="Estilo_Labels_Pago_Principal" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Teal"/>
+        <Setter Property="FontStyle" Value="Oblique"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+    </Style>
+    <!-- ESTILO DE BOTON PAGO  -->
+    <Style x:Key="Estilo_RB_Pago_Principal" TargetType="RadioButton">
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border x:Name="border" BorderThickness="0"
+                Background="{TemplateBinding Background}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- ANIMACION DE TAMAÑO DE BOTON -->
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!-- ESTILO DE TITULO CARTERA CLIENTES -->
+    <Style x:Key="Estilo_Labels_CarteraClientes_Principal" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Teal"/>
+        <Setter Property="FontStyle" Value="Oblique"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+    </Style>
+    <!-- ESTILO DE BOTON CARTERA CLIENTES  -->
+    <Style x:Key="Estilo_RB_CarteraClientes_Principal" TargetType="RadioButton">
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border x:Name="border" BorderThickness="0"
+                Background="{TemplateBinding Background}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- ANIMACION DE TAMAÑO DE BOTON -->
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!-- ESTILO DE TITULO PRODUCTO -->
+    <Style x:Key="Estilo_Labels_Producto_Principal" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Teal"/>
+        <Setter Property="FontStyle" Value="Oblique"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+    </Style>
+    <!-- ESTILO DE BOTON PRODUCTO  -->
+    <Style x:Key="Estilo_RB_Producto_Principal" TargetType="RadioButton">
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border x:Name="border" BorderThickness="0"
+            Background="{TemplateBinding Background}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- ANIMACION DE TAMAÑO DE BOTON -->
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!-- ESTILO DE TITULO AJUSTES -->
+    <Style x:Key="Estilo_Labels_Ajustes_Principal" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Teal"/>
+        <Setter Property="FontStyle" Value="Oblique"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+    </Style>
+    <!-- ESTILO DE BOTON AJUSES  -->
+    <Style x:Key="Estilo_RB_Ajustes_Principal" TargetType="RadioButton">
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border x:Name="border" BorderThickness="0"
+        Background="{TemplateBinding Background}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- ANIMACION DE TAMAÑO DE BOTON -->
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="110"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Width)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(RadioButton.Height)"
+                                 To="75"
+                                 Duration="0:0:0.5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+
+    </Style>
+
+</ResourceDictionary>
